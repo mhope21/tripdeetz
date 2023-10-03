@@ -1,0 +1,77 @@
+# TripDeetz - Flight Status and Reservation Management
+
+## Overview
+
+TripDeetz is a Python application that allows users to retrieve flight status and weather information for a specific flight and date, as well as manage reservations. The application uses external APIs to fetch flight and weather data and stores reservation information in a PostgreSQL database.
+
+## Features
+
+- Retrieve flight status and weather information:
+  - Enter the flight number (e.g., AA123) and date (YYYY-MM-DD) to get details about the flight's departure, arrival, and weather conditions at the destination airport.
+  - Displays information such as airline, departure airport, scheduled departure time, arrival airport, scheduled arrival time, and flight status.
+
+- Lookup reservations:
+  - Enter a confirmation number to retrieve details of a reservation.
+  - Search for reservations by date and view a list of reservations made on that date.
+
+- Add new reservations:
+  - Enter reservation details, including confirmation number, date, location, duration, reservation type, and web link.
+  - Store reservation information in a PostgreSQL database for future reference.
+
+## Prerequisites
+
+Before running the TripDeetz application, make sure you have the following prerequisites installed:
+
+- Python (>= 3.6)
+- Tkinter (Python's standard GUI library)
+- psycopg2 (Python PostgreSQL adapter)
+- configparser (for reading configuration files)
+- Requests (for making HTTP requests)
+- PostgreSQL (a PostgreSQL database to store reservation data)
+
+## Configuration
+
+1. Create a PostgreSQL database and update the configuration file `config.ini` with your database credentials:
+
+   ```
+   [database]
+   dbname = your_db_name
+   host = your_db_host
+   user = your_db_user
+   password = your_db_password
+   ```
+
+2. Obtain API keys for the AviationStack, Airlabs, and OpenWeatherMap services. Update the `config.ini` file with your API keys:
+
+   ```
+   [api_keys]
+   api_key = your_aviationstack_api_key
+   air_api_key = your_airlabs_api_key
+   weather_api_key = your_openweathermap_api_key
+   ```
+
+## Usage
+
+1. Run the `main.py` script using Python to launch the TripDeetz application.
+
+   ```
+   python main.py
+   ```
+
+2. Use the graphical user interface (GUI) to perform the following actions:
+
+   - Retrieve flight status and weather information by entering a flight number and date.
+   - Lookup reservations by entering a confirmation number or searching for reservations by date.
+   - Add new reservations by providing the required details.
+
+## Customization
+
+You can further customize the appearance and behavior of the TripDeetz application by modifying the Python script (`main.py`). You can change labels, button text, and GUI layouts to suit your preferences.
+
+## Credits
+
+TripDeetz was created by Marcia Hope and is powered by AviationStack, Airlabs, and OpenWeatherMap APIs.
+
+## License
+
+None
